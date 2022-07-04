@@ -1,0 +1,4 @@
+#Mon Jul 04 15:50:07 IST 2022
+base.0=C\:\\Users\\Sidharth Joshi\\AndroidStudioProjects\\riverpod_sample\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
