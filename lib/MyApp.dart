@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_sample/ChargerService.dart';
+import 'package:riverpod_sample/DetailsScreen.dart';
 
 final mapChargerFutureProvider = FutureProvider((ref) async {
   final mapChargerService = ref.read(chargerServiceProvider);
@@ -49,7 +50,14 @@ class HomePage extends ConsumerWidget {
                   itemCount: chargers?.length,
                   itemBuilder: (ctz, index) {
                     return InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailsScreen(
+                                  charger: chargers[index],
+                                )));
+                      },
                       child: Container(
                           decoration: BoxDecoration(
                             color: Colors.greenAccent,

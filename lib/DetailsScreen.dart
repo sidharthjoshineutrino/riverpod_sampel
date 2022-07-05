@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_sample/MyApp.dart';
+import 'package:riverpod_sample/models/SearchCharger.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({Key? key}) : super(key: key);
-
+  const DetailsScreen({Key? key, this.charger}) : super(key: key);
+  final SearchData? charger;
   @override
   Widget build(BuildContext context) {
-    return Consumer(builder: (BuildContext context,ref,Widget? child){
-      final details = ref.watch(searchChargerFutureProvider);
-      return Scaffold(
+    return SafeArea(
+      child: Scaffold(
         body: Container(
           child: Column(
             children: [
-              Text("")
+              Text(charger!.distance.toString())
             ],
           ),
         ),
-      );
-    });
+      ),
+    );
   }
 }
